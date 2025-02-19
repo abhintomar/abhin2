@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FOOD BLOG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5f5;
+        }
+        
+        header {
+            background-color: #e2d8d8;
+            color: rgb(14, 12, 12);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        nav {
+            background-color: #0000002f;
+            padding: 35px;
+            text-align:right;
+        }
+        
+        nav a {
+            font-size: xx-large;
+            font-weight: 800;
+            color: #110b0b;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+        
+        nav a:hover {
+            background-color: #ff9999;
+            color: white;
+            border-radius: 5px;
+        }
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0px auto;
+            padding: 20px;
+        }
+
+        .gallery-grid {
+            display:flex;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: white;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0,0,1);;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom:0;
+            left: 0;
+            right: 0;
+            background-color: rgba(156, 24, 35, 0.9);
+            color: rgba(11, 16, 15, 0.887);
+            padding: 15px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .image-caption {
+            
+            transform:translateZ(0);
+        }
+
+        .section-title {
+            color: #030303;
+        text-transform: uppercase;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: 500;
+            margin: 20px 0;
+            padding: 10px;
+            border-bottom: 2px solid #0c0b0b;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="BLOG.html">Blog</a>
+        <a href="FOOD.html">Food order</a>
+        <a href="bhhf"> About</a>
+        <a href="CONTACT"> Contact</a>
+
+    </nav>
+    <header>
+        <h1>FOOD BLOG</h1>
+        <img  height="250px"; width="100%"; src="zomato.webp" alt="zomato">
+    </header>
+    
+    
+    
+    <div class="gallery-container">
+        <h1 class="section-title">menu</h1>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="p1.png">
+                <div class="image-caption">Majestic Exterior View<br> price=120rupee</div>
+                <h2>The Big Brand Theory |<br> How Ma’s recipes ended up building one of India’s <br>leading Burmese specialty cuisine brands</h2>
+                <p> Burma Burma stands out as India’s only specialty Burmese restaurant and tea<br> room offering a culinary experience inspired by <br>the streets and homes of Burma (now Myanmar).<br> Established by Ankit Gupta and Chirag Chh</p>
+           
+            </div>
+            <div class="gallery-item">
+                <img src="m1.webp">
+                <div class="image-caption">menu chart</div>
+                <h2>The Big Brand Theory |<br> How Ma’s recipes ended up building one of India’s <br>leading Burmese specialty cuisine brands</h2>
+                <p> Burma Burma stands out as India’s only specialty Burmese restaurant and tea<br> room offering a culinary experience inspired by <br>the streets and homes of Burma (now Myanmar).<br> Established by Ankit Gupta and Chirag Chh</p>
+           
+            </div>
+            <div class="gallery-item">
+                <img src="m2.jpg">
+                <div class="image-caption">Resturent</div>
+                <h2>The Big Brand Theory |<br> How Ma’s recipes ended up building one of India’s <br>leading Burmese specialty cuisine brands</h2>
+                <p> Burma Burma stands out as India’s only specialty Burmese restaurant and tea<br> room offering a culinary experience inspired by <br>the streets and homes of Burma (now Myanmar).<br> Established by Ankit Gupta and Chirag Chh</p>
+           
+            </div>
+        </div>
+
+        <h2 class="section-title">nonveg</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="biryani1.jpg">
+                <div class="image-caption"> biryani</div>
+                <h2>The Big Brand Theory | <br>Carving a spice trail from <br>Tamil Nadu to 5+ countries
+                    </h2>
+                    <p> Explore how the fusion of tradition and innovation <br>shaped the creation of a legacy brand</p>
+            </div>
+            <div class="gallery-item">
+                <img src="biryani2.avif">
+                <div class="image-caption">hydrabadi biryani</div>
+                <h1>The chicken biryani calories per<BR> 500g are 360 calories. Of these,</h1> <p>56 grams come 
+                    from carbohydrates, 16 grams are <br>from protein, 8 grams are from fat, and the<br> remaining 15 grams are from other nutrients. 
+                    1 kg of chicken biryani<br> calories amount to around 720 calories</p>
+        
+            </div>
+            <div class="gallery-item">
+                <img src="biryani3.jpg">
+                <div class="image-caption">mandi biryani</div>
+                <h2>The Big Brand Theory | <br>Carving a spice trail from <br>Tamil Nadu to 5+ countries
+                </h2>
+                <p> Explore how the fusion of tradition and innovation <br>shaped the creation of a legacy brand</p>
+        
+
+            </div>
+        </div>
+
+        <h3 class="section-title">veg food</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="veg1.webp">
+                <div class="image-caption">BUTTER PANNER</div>
+                <h2> Eats the best special panner of india</h2>
+                <p>one cup (250 grams) of Paneer gives 877 calories.<br> Out of which carbohydrates comprise 190 calories,<br>
+                     proteins account for 154 calories and <br>remaining calories come from fat</p>
+            </div>
+            <div class="gallery-item">
+                <img src="veg2.avif">
+                <div class="image-caption">RICE </div>
+                <h2> the beST BASMATI panner RICE of</h2>
+                <p>one cup (250 grams) of Paneer gives 877 calories.<br> Out of which carbohydrates comprise 190 calories,<br>
+                     proteins account for 154</p>
+            </div>
+            <div class="gallery-item">
+                <img src="veg3.jpeg">
+                <div class="image-caption">TRY IT</div>
+                <h2> MILK SWEET AND  RICE </h2>
+                <p>one cup (250 grams) of Paneer gives 877 calories.<br> Out of which carbohydrates comprise 190 calories,<br>
+                     proteins account for 154 </p>
+            </div>
+        </div>
+
+        <h4 class="section-title">fast food</h4>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+
+                <img src="ff1.webp">
+                <div class="image-caption">Burger</div>
+               <h2> burger western food</h2>
+                <p>
+per 1 burger - Calories: 70kcal<br> | Fat: 3.83g | Carbs: 9.58g | Prot: 5.24g<br>
+Other sizes: 1<br> serving - 10kcal , 100 g - 175kcal</p>
+            </div>
+            <div class="gallery-item">
+                <img src="ff2.jpg">
+                <div class="image-caption">pizza</div>
+                <h2> pizza western food</h2>
+                <p>
+per 1 pizza - Calories: 70kcal<br> | Fat: 2.83g | Carbs: 6.58g | Prot: 4.24g<br>
+Other sizes: 1<br> serving - 140kcal , 100 g - 175kcal</p>
+            </div>
+            <div class="gallery-item">
+                <img src="ff3.webp">
+                <div class="image-caption">momo</div>
+                
+
+<h2>Momos chines food</h2>
+<p>
+per 1 piece - Calories: 70kcal |<br> Fat: 2.83g | Carbs: 6.58g | Prot: 4.24g<br>
+Other sizes: 1 serving - 140kcal , 100 g - 175kcal</p>
+            </div>
+        </div>
+
+        <h5 class="section-title">street food</h5>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="st1.jpg">
+                <div class="image-caption">golgappe </div>
+                <h2> golgapee indian street food</h2>
+                <p>
+per 1 pice- Calories: 70kcal<br> | Fat: 2.83g | Carbs: 6.58g | Prot: 4.24g<br>
+Other sizes: 1<br> serving - 140kcal , 100 g - 175kcal</p>
+            </div>
+            <div class="gallery-item">
+
+                <img src="st2.webp">
+                <div class="image-caption">pavbaji</div>
+                <h2> pavbaji south indian food</h2>
+                <p>
+per 1 pavbazii - Calories: 70kcal<br> | Fat: 2.83g | Carbs: 6.58g | Prot: 4.24g<br>
+Other sizes: 1<br> serving - 140kcal , 100 g - 175kcal</p>
+            </div>
+            <div class="gallery-item">
+
+                <img src="st3.jpg">
+                <div class="image-caption">vadapav</div>
+                <h2> pizza western food</h2>
+                <p>
+per 1 vadapav - Calories: 70kcal<br> | Fat: 2.83g | Carbs: 6.58g | Prot: 4.24g<br>
+Other sizes: 1<br> serving - 140kcal , 100 g - 175kcal</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

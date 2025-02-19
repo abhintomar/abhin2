@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOOD DELIVERY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffebee;
+        }
+        header {
+            background-color: #26410b77;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        nav {
+            background-color: #c2185b;
+            padding: 0.5em;
+        }
+        nav a {
+            color: white; 
+          text-decoration:none; 
+          padding:.5em 1em; 
+          display:inline-block; 
+          margin-right:.5em
+          }
+          .content { 
+              padding:.5em; 
+              max-width :500px; 
+              margin:auto
+          }
+          form { 
+              display:flex; 
+              flex-direction :column
+          }
+          label,input,select { 
+              display:block; 
+              margin-bottom:.75em; 
+              width :100%
+          }
+          input[type=submit] { 
+              background-color:#2f0c36c7; 
+              color:white; 
+              border:none; 
+              padding:.5em; 
+              cursor:pointer
+          }
+
+      </style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1> FOOD ORDER</h1>
+
+</header>
+
+<nav>
+
+
+
+<a href = "BLOG.html">HOME</a>
+<a href = "FOOD.html">FOOD </a>
+
+</nav>
+
+<div class = "content">
+
+<form>
+
+<label for = "name">Full Name:</label>
+
+<input type = "text" id = "name" name = "name" required>
+
+<label for = "name">Address:</label>
+
+<input type = "address" id = "address" name = "address" required>
+
+
+<label for = "phone">Phone Number:</label>
+
+<input type = "tel" id = "phone" name = "phone" required>
+
+
+
+
+<label for = "guests">How much quantity:</label>
+
+<input type = "number" id = "guests" name = "guests" min = "1" required>
+
+<label for = "room-type">Food Type:</label>
+
+<select id = "room-type" name = "room-type" required>
+
+<option value="">Select a food type</option>
+
+<option value ="single">Veg</option>
+
+<option value ="double">Non veg</option>
+
+<option value ="suite">Fast food</option>
+<option value ="suite">Indian food</option>
+
+</select>
+
+<input type ="submit"value ="order Now">
+
+</form>
+
+</div>
+
+
+</body>
+
+
