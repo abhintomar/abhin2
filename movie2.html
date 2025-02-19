@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Movies List</title>
+    <style>
+    body {
+        background-image:url(mo1.jpg);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+    
+    .container {
+        margin: 50px auto;
+        width: 300px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0px 0px 10px gray;
+        border-radius: 5px;
+    }
+    
+    input {
+        width: 80%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    button {
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    li {
+        padding: 8px;
+        background: #ddd;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    li button {
+        background: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+    } 
+    #clearlistbtn{
+        background-color: deeppink;
+    }
+    #clearlistbtn:hover{
+        background-color: darkviolet;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Favorite Movies</h1>
+        <input type="text" id="movieInput" placeholder="Enter movie name">
+        <button onclick="addMovie()">Add Movie</button>
+        <ul id="movieList"></ul>
+        <p id="moviecount"> total movie: 0</p>
+        <button id="clearlistbtn"> clear list</button>
+    </div>
+
+    <script> let movies = [];
+
+        function addMovie() {
+            const movieInput = document.getElementById('movieInput');
+            const movieName = movieInput.value.trim();
+        
+            if (movieName == "") {
+                alert("Please enter a movie name!");
+                return;
+            }
+        
+            movies.push(movieName);
+            movieInput.value = ""; // Clear input field
+            displayMovies();
+        }
+        
+        function displayMovies() {
+            const movieList = document.getElementById('movieList');
+            movieList.innerHTML = ""; // Clear previous list
+        
+           
+       
+        }</script>
+</body>
+</html>
