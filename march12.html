@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            text-align: center;
+        }
+        #image-gallery img {
+            width: 100px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #large-image {
+            width: 300px;
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Web Page</h1>
+
+        
+        <button id="theme-toggle">Toggle Dark Mode</button>
+
+
+        <h2>Countdown Timer</h2>
+        <input type="number" id="timer-input" placeholder="Enter seconds">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+        <div id="countdown">00:00</div>
+
+
+        <h2>Change Style</h2>
+        <button onclick="changeStyle()">Change Style</button>
+        <p id="style-text">This text will change.</p>
+
+    
+        <h2>List Operations</h2>
+        <ul id="list">
+            <li>Banana</li>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Banana</li>
+        </ul>
+        <button onclick="sortList()">Sort</button>
+        <button onclick="removeDuplicates()">Remove Duplicates</button>
+        <button onclick="reverseList()">Reverse</button>
+
+    
+        <h2>Dynamic Table</h2>
+        <input type="text" id="name" placeholder="Enter name">
+        <button onclick="addRow()">Add Row</button>
+        <table id="data-table">
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </table>
+
+        
+        <h2>Image Gallery</h2>
+        <div id="image-gallery">
+            <img src="m1.webp" onclick="showImage(this)">
+            <img src="m122.webp" onclick="showImage(this)">
+            <img src="m123.jpg" onclick="showImage(this)">
+        </div>
+        <img id="large-image">
+    </div>
+
+    <script>
+        
+        const themeToggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+        });
+
+    
+        let timer;
+        let timeLeft;
+        let isPaused = false;
+        function startTimer() {
+            if (isPaused) {
+                isPaused = false;
+            } else {
+                timeLeft = document.getElementById('timer-input').value;
+            }
+            clearInterval(timer);
+            timer = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    updateTimerDisplay();
+                } else {
+                    clearInterval(timer);
+                }
+            }, 1000);
+        }
+        function pauseTimer() {
+            isPaused = true;
+            clearInterval(timer);
+        }
+        function resetTimer() {
+            clearInterval(timer);
+            timeLeft = 0;
+            updateTimerDisplay();
+        }
+        function updateTimerDisplay() {
+            document.getElementById('countdown').innerText = timeLeft + "s";
+            document.body.style.backgroundColor = timeLeft > 10 ? 'green' : timeLeft > 5 ? 'yellow' : 'red';
+        }
+        function changeStyle() {
+            document.getElementById('style-text').style.color = 'blue';
+            document.getElementById('style-text').style.fontSize = '20px';
+        }
+
+    
+        function sortList() {
+            let list = document.getElementById('list');
+            let items = Array.from(list.children);
+            items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+            list.innerHTML = '';
+            items.forEach(item => list.appendChild(item));
+        }
+        function removeDuplicates() {
+            let list = document.getElementById('list');
+            let items = [...new Set(Array.from(list.children).map(item => item.textContent))];
+            list.innerHTML = '';
+            items.forEach(text => {
+                let li = document.createElement('li');
+                li.textContent = text;
+                list.appendChild(li);
+            });
+        }
+        function reverseList() {
+            let list = document.getElementById('list');
+            let items = Array.from(list.children).reverse();
+            list.innerHTML = '';
+            items.forEach(item => list.appendChild(item));
+        }
+
+        
+        function addRow() {
+            let name = document.getElementById('name').value;
+            if (!name) return;
+            let table = document.getElementById('data-table');
+            let row = table.insertRow();
+            row.insertCell(0).textContent = name;
+            let actions = row.insertCell(1);
+            let deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.onclick = () => table.deleteRow(row.rowIndex);
+            actions.appendChild(deleteBtn);
+        }
+
+    
+        function showImage(img) {
+            let largeImage = document.getElementById('large-image');
+            largeImage.src = img.src;
+            largeImage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
